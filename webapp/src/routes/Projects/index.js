@@ -9,14 +9,19 @@ export default (store) => ({
   getChildRoutes(partialNextState, cb) {
     require.ensure([], require => {
       const ProjectsCreate = require('./containers/ProjectsCreateContainer').default;
+      const ProjectView = require('./containers/ProjectViewContainer').default;
 
       cb(null, [
         {
           path: 'create',
           component: ProjectsCreate,
         },
+        {
+          path: ':projectId',
+          component: ProjectView,
+        },
       ]);
-    }, 'projects-create');
+    }, 'projects-children');
   },
 });
 
