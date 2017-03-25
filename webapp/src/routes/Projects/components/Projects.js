@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Link } from 'react-router'
+
 class Projects extends React.Component {
   render() {
     return (
@@ -17,9 +19,9 @@ class Projects extends React.Component {
               <h4 className="list-group-item-heading">Euphoria</h4>
             </a>
           </div>
-          <a className="btn btn-success btn-lg">
+          <Link to="/projects/create" className="btn btn-success btn-lg">
             <span className="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Project
-          </a>
+          </Link>
         </div>
       </div>
     )
